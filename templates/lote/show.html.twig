@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lote{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Lote</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ lote.id }}</td>
+                </tr>
+                <tr>
+                    <th>Numerolote</th>
+                    <td>{{ lote.numerolote }}</td>
+                </tr>
+                <tr>
+                    <th>Fechaelaboracion</th>
+                    <td>{{ lote.fechaelaboracion ? lote.fechaelaboracion|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Fechavencimiento</th>
+                    <td>{{ lote.fechavencimiento ? lote.fechavencimiento|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_lote_index') }}" class="btn btn-primary back">Volver al listado</a>
+
+        <a href="{{ path('app_lote_edit', {'id': lote.id}) }}" class="btn btn-success">Editar</a>
+    </div>
+</div>
+{% endblock %}

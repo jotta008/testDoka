@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Almacén{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Almacén</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ almacen.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ almacen.nombre }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_almacen_index') }}" class="btn btn-primary back">Volver al listado</a>
+
+        <a href="{{ path('app_almacen_edit', {'id': almacen.id}) }}" class="btn btn-success">Editar</a>
+
+    </div>
+</div>
+{% endblock %}

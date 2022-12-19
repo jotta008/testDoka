@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo Laboratorio{% endblock %}
+
+{% block body %}
+    <div class="row centrado">
+        <div class="col-6">
+            <h1>Crear nuevo Laboratorio</h1>
+
+            {{ include('laboratorio/_form.html.twig') }}
+        </div>
+    </div>
+    <div class="row centrado">
+        <div class="col-6">
+            <a href="{{ path('app_laboratorio_index') }}" class="btn btn-primary back">Volver al listado</a>
+        </div>
+    </div>
+{% endblock %}

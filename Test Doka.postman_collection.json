@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "d3eb30ab-f994-4402-bf84-ee6ab0f184b1",
+		"name": "Test Doka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13992565"
+	},
+	"item": [
+		{
+			"name": "Articulos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/articulos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"articulos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laboratorios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/articulos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"articulos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo laboratorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "prueba",
+							"type": "text"
+						},
+						{
+							"key": "cuit",
+							"value": "1233123",
+							"type": "text"
+						},
+						{
+							"key": "razonSocial",
+							"value": "Prueba SRL",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "Prueba 123",
+							"type": "text"
+						},
+						{
+							"key": "codigo",
+							"value": "111222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/nuevo_laboratorio",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"nuevo_laboratorio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo Articlo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "prueba art",
+							"type": "text"
+						},
+						{
+							"key": "gtin",
+							"value": "123312,123",
+							"type": "text"
+						},
+						{
+							"key": "codigoInterno",
+							"value": "231",
+							"type": "text"
+						},
+						{
+							"key": "fraccionable",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "unidadDeFraccion",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "precioVenta",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "precioCompra",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "idAlmacen",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "idLaboratorio",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/nuevo_articulo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"nuevo_articulo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar laboratorio",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Articulo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Editar laboratorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "prueba33333",
+							"type": "text"
+						},
+						{
+							"key": "cuit",
+							"value": "1233123",
+							"type": "text"
+						},
+						{
+							"key": "razonSocial",
+							"value": "Prueba SRL",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "Prueba 123",
+							"type": "text"
+						},
+						{
+							"key": "codigo",
+							"value": "111222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/editar_laboratorio/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"editar_laboratorio",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar laboratorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "prueba art",
+							"type": "text"
+						},
+						{
+							"key": "gtin",
+							"value": "123312,123",
+							"type": "text"
+						},
+						{
+							"key": "codigoInterno",
+							"value": "231",
+							"type": "text"
+						},
+						{
+							"key": "fraccionable",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "unidadDeFraccion",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "precioVenta",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "precioCompra",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "idAlmacen",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "idLaboratorio",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/editar_articulo/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"editar_articulo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Laboratorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/eliminar_laboratorio/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"eliminar_laboratorio",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Laboratorio Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/project/eliminar_laboratorio/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"project",
+						"eliminar_laboratorio",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

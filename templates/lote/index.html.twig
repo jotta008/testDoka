@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lote index{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Lote index</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Numerolote</th>
+                    <th>Fechaelaboracion</th>
+                    <th>Fechavencimiento</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for lote in lotes %}
+                <tr>
+                    <td>{{ lote.id }}</td>
+                    <td>{{ lote.numerolote }}</td>
+                    <td>{{ lote.fechaelaboracion ? lote.fechaelaboracion|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ lote.fechavencimiento ? lote.fechavencimiento|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <button class="btn btn-success">
+                            <a href="{{ path('app_lote_show', {'id': lote.id}) }}">show</a>
+                        </button>
+                        <button class="btn btn-warning">
+                            <a href="{{ path('app_lote_edit', {'id': lote.id}) }}">edit</a>
+                        </button>
+                        <form method="post" action="{{ path('app_lote_delete', {'id': lote.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ lote.id) }}">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No hay registros</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row centrado">
+    <div class="col-10">
+        <a href="{{ path('app_lote_new') }}"><button  class="btn btn-success">Crear nuevo lote</button></a>
+    </div>
+</div>
+{% endblock %}

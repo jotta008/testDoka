@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laboratorio{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Laboratorio</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ laboratorio.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ laboratorio.nombre }}</td>
+                </tr>
+                <tr>
+                    <th>Cuit</th>
+                    <td>{{ laboratorio.cuit }}</td>
+                </tr>
+                <tr>
+                    <th>Razonsocial</th>
+                    <td>{{ laboratorio.razonsocial }}</td>
+                </tr>
+                <tr>
+                    <th>Direccion</th>
+                    <td>{{ laboratorio.direccion }}</td>
+                </tr>
+                <tr>
+                    <th>Codigo</th>
+                    <td>{{ laboratorio.codigo }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_laboratorio_index') }}" class="btn btn-primary back">Volver al listado</a>
+
+        <a href="{{ path('app_laboratorio_edit', {'id': laboratorio.id}) }}" class="btn btn-success">Editar</a>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Almacén{% endblock %}
+
+{% block body %}
+    <div class="row centrado">
+        <div class="col-6">
+            <h1>Editar Almacén</h1>
+
+            {{ include('almacen/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        </div>
+    </div>
+    <div class="row centrado">
+        <div class="col-6">
+            <a href="{{ path('app_almacen_index') }}" class="btn btn-primary back">Volver al listado</a>
+        </div>
+    </div>
+{% endblock %}

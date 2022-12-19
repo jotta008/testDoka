@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulo{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Artículo</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ articulo.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ articulo.nombre }}</td>
+                </tr>
+                <tr>
+                    <th>Gtin</th>
+                    <td>{{ articulo.gtin ? articulo.gtin|json_encode : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Codigointerno</th>
+                    <td>{{ articulo.codigointerno }}</td>
+                </tr>
+                <tr>
+                    <th>Fraccionable</th>
+                    <td>{{ articulo.fraccionable ? 'Yes' : 'No' }}</td>
+                </tr>
+                <tr>
+                    <th>Unidaddefraccion</th>
+                    <td>{{ articulo.unidaddefraccion }}</td>
+                </tr>
+                <tr>
+                    <th>Precioventa</th>
+                    <td>{{ articulo.precioventa }}</td>
+                </tr>
+                <tr>
+                    <th>Preciocompra</th>
+                    <td>{{ articulo.preciocompra }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_articulo_index') }}" class="btn btn-primary back">Volver al listado</a>
+
+        <a href="{{ path('app_articulo_edit', {'id': articulo.id}) }}" class="btn btn-success">Editar</a>
+    </div>
+</div>
+{% endblock %}

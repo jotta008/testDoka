@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listado de artículos{% endblock %}
+
+{% block body %}
+<div class="row centrado">
+    <div class="col-10">
+        <h1>Listado de artículos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>GTIN</th>
+                    <th>Codigo interno</th>
+                    <th>Fraccionable</th>
+                    <th>Unidad de fracción</th>
+                    <th>Precio venta</th>
+                    <th>Precio compra</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for articulo in articulos %}
+                <tr>
+                    <td>{{ articulo.nombre }}</td>
+                    <td>{{ articulo.gtin }}</td>
+                    <td>{{ articulo.codigointerno }}</td>
+                    <td>{{ articulo.fraccionable ? 'Yes' : 'No' }}</td>
+                    <td>{{ articulo.unidaddefraccion }}</td>
+                    <td>{{ articulo.precioventa }}</td>
+                    <td>{{ articulo.preciocompra }}</td>
+                    <td>
+                        <button class="btn btn-success">
+                            <a href="{{ path('app_articulo_show', {'id': articulo.id}) }}">Ver</a>
+                        </button>
+                        <button class="btn btn-warning">
+                            <a href="{{ path('app_articulo_edit', {'id': articulo.id}) }}">Editar</a>
+                        </button>
+                        <form method="post" action="{{ path('app_articulo_delete', {'id': articulo.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');"  class="margin-top-10px">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ articulo.id) }}">
+                            <button class="btn btn-danger">Eliminar</button>
+                        </form>
+
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">No hay registros</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row centrado">
+    <div class="col-10">
+        <a href="{{ path('app_articulo_new') }}"><button  class="btn btn-success">Crear nuevo artículo</button></a>
+    </div>
+</div>
+
+{% endblock %}

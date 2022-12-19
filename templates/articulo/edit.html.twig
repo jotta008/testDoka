@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Artículo{% endblock %}
+
+{% block body %}
+    <div class="row centrado">
+        <div class="col-6">
+            <h1>Editar Artículo</h1>
+
+            {{ include('articulo/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        </div>
+    </div>
+    <div class="row centrado">
+        <div class="col-6">
+            <a href="{{ path('app_articulo_index') }}" class="btn btn-primary back">Volver al listado</a>
+        </div>
+    </div>
+{% endblock %}
